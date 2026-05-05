@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { FileText } from 'lucide-react';
 
 export function ResumeTemplates() {
@@ -48,9 +49,12 @@ export function ResumeTemplates() {
                 <p className="text-slate-700 mb-4">{template.description}</p>
                 <p className="text-slate-600 mb-6">{template.preview}</p>
                 <div className="flex gap-3">
-                  <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all">
+                  <Link
+                    to="/resume-builder"
+                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all inline-block"
+                  >
                     Use this template
-                  </button>
+                  </Link>
                   <button className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-all">
                     Preview
                   </button>

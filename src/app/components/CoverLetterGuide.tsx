@@ -76,7 +76,7 @@ export function CoverLetterGuide() {
             <li>• Mention 1-2 projects that relate to what they need</li>
             <li>• Don't just repeat your resume — add context or explain why something matters</li>
             <li>• It's okay to sound like a student. Don't pretend to have more experience than you do</li>
-            <li>• Proofread carefully. One typo won't kill you, but five typos look careless</li>
+            <li>• Proofread carefully before submitting. Typos can distract from the quality of your work</li>
           </ul>
         </div>
 

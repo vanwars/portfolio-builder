@@ -4,6 +4,7 @@ import { Dashboard } from "./components/Dashboard";
 import { MyProjects } from "./components/MyProjects";
 import { ResumeTemplates } from "./components/ResumeTemplates";
 import { MyResumes } from "./components/MyResumes";
+import { ResumeBuilder } from "./components/ResumeBuilder";
 import { CoverLetterGuide } from "./components/CoverLetterGuide";
 import { MyCoverLetters } from "./components/MyCoverLetters";
 import { PortfolioTemplates } from "./components/PortfolioTemplates";
@@ -33,6 +34,8 @@ export const router = createBrowserRouter([
       { path: "my-projects", Component: MyProjects },
       { path: "resume-templates", Component: ResumeTemplates },
       { path: "my-resumes", Component: MyResumes },
+      { path: "resume-builder", Component: ResumeBuilder },
+      { path: "resume-builder/:id", Component: ResumeBuilder },
       { path: "cover-letter-guide", Component: CoverLetterGuide },
       { path: "my-cover-letters", Component: MyCoverLetters },
       { path: "portfolio-templates", Component: PortfolioTemplates },
