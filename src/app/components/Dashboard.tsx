@@ -6,10 +6,10 @@ export function Dashboard() {
     <div className="space-y-16">
       <div className="space-y-3">
         <h1 className="text-3xl text-slate-900">
-          Welcome back
+          Experience Studio
         </h1>
         <p className="text-lg text-slate-600">
-          Let's continue working on your portfolio.
+          Turn the work you've done into clear, evidence-backed stories that show what you know, how you think, and what you can contribute.
         </p>
       </div>
 

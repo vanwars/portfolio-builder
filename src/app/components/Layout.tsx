@@ -5,13 +5,14 @@ import { useState } from 'react';
 export function Layout() {
   const location = useLocation();
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [isResumesExpanded, setIsResumesExpanded] = useState(false);
-  const [isCoverLettersExpanded, setIsCoverLettersExpanded] = useState(false);
-  const [isInfoExpanded, setIsInfoExpanded] = useState(false);
+  const [isCreateExpanded, setIsCreateExpanded] = useState(false);
+  const [isResumeExpanded, setIsResumeExpanded] = useState(false);
+  const [isCoverLetterExpanded, setIsCoverLetterExpanded] = useState(false);
+  const [isBackgroundExpanded, setIsBackgroundExpanded] = useState(false);
 
-  const sidebarItems = [
+  const mainItems = [
     { path: '/', label: 'Home', icon: Home },
-    { path: '/my-projects', label: 'My Projects', icon: Folder },
+    { path: '/my-projects', label: 'My Project Portfolio', icon: Folder },
   ];
 
   const resumeItems = [
@@ -24,16 +25,15 @@ export function Layout() {
     { path: '/my-cover-letters', label: "Cover Letters I've Made", icon: Mail },
   ];
 
-  const secondaryItems = [
+  const portfolioItems = [
     { path: '/portfolio-templates', label: 'Portfolio Templates', icon: Briefcase },
   ];
 
-  const infoItems = [
+  const backgroundItems = [
     { path: '/bio', label: 'Bio', icon: User },
     { path: '/skills', label: 'Skills', icon: Award },
     { path: '/work-history', label: 'Work History', icon: History },
     { path: '/certifications', label: 'Certifications', icon: Award },
-    { path: '/publications', label: 'Publications', icon: BookOpen },
   ];
 
   return (
@@ -42,7 +42,7 @@ export function Layout() {
         <div className={`p-6 border-b border-slate-200 flex items-center justify-between ${isCollapsed ? 'px-4' : ''}`}>
           {!isCollapsed && (
             <Link to="/" className="text-xl text-slate-900">
-              Portfolio Builder
+              Experience Studio
             </Link>
           )}
           <button
@@ -59,7 +59,7 @@ export function Layout() {
         </div>
         <nav className="p-4">
           <ul className="space-y-1">
-            {sidebarItems.map((item) => {
+            {mainItems.map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.path;
               return (
@@ -84,28 +84,28 @@ export function Layout() {
           <div className="mt-6 pt-6 border-t border-slate-200">
             {!isCollapsed && (
               <p className="px-3 mb-2 text-xs uppercase tracking-wide text-slate-500">
-                Other Tools
+                Create from my portfolio
               </p>
             )}
             <ul className="space-y-1">
               <li>
                 <button
-                  onClick={() => setIsResumesExpanded(!isResumesExpanded)}
+                  onClick={() => setIsResumeExpanded(!isResumeExpanded)}
                   className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-slate-600 hover:bg-slate-50 ${
                     isCollapsed ? 'justify-center' : ''
                   }`}
-                  title={isCollapsed ? 'Resumes' : ''}
+                  title={isCollapsed ? 'Resume' : ''}
                 >
                   <FileText className="w-5 h-5 flex-shrink-0" />
                   {!isCollapsed && (
                     <>
-                      <span className="text-sm flex-1 text-left">Resumes</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform ${isResumesExpanded ? 'rotate-180' : ''}`} />
+                      <span className="text-sm flex-1 text-left">Resume</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${isResumeExpanded ? 'rotate-180' : ''}`} />
                     </>
                   )}
                 </button>
 
-                {isResumesExpanded && !isCollapsed && (
+                {isResumeExpanded && !isCollapsed && (
                   <ul className="mt-1 ml-6 space-y-1">
                     {resumeItems.map((item) => {
                       const Icon = item.icon;
@@ -132,22 +132,64 @@ export function Layout() {
 
               <li>
                 <button
-                  onClick={() => setIsCoverLettersExpanded(!isCoverLettersExpanded)}
+                  onClick={() => setIsCreateExpanded(!isCreateExpanded)}
                   className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-slate-600 hover:bg-slate-50 ${
                     isCollapsed ? 'justify-center' : ''
                   }`}
-                  title={isCollapsed ? 'Cover Letters' : ''}
+                  title={isCollapsed ? 'Portfolio' : ''}
                 >
-                  <Mail className="w-5 h-5 flex-shrink-0" />
+                  <Briefcase className="w-5 h-5 flex-shrink-0" />
                   {!isCollapsed && (
                     <>
-                      <span className="text-sm flex-1 text-left">Cover Letters</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform ${isCoverLettersExpanded ? 'rotate-180' : ''}`} />
+                      <span className="text-sm flex-1 text-left">Portfolio</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${isCreateExpanded ? 'rotate-180' : ''}`} />
                     </>
                   )}
                 </button>
 
-                {isCoverLettersExpanded && !isCollapsed && (
+                {isCreateExpanded && !isCollapsed && (
+                  <ul className="mt-1 ml-6 space-y-1">
+                    {portfolioItems.map((item) => {
+                      const Icon = item.icon;
+                      const isActive = location.pathname === item.path;
+                      return (
+                        <li key={item.path}>
+                          <Link
+                            to={item.path}
+                            className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
+                              isActive
+                                ? 'bg-blue-50 text-blue-700'
+                                : 'text-slate-600 hover:bg-slate-50'
+                            }`}
+                          >
+                            <Icon className="w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm">{item.label}</span>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </li>
+
+              <li>
+                <button
+                  onClick={() => setIsCoverLetterExpanded(!isCoverLetterExpanded)}
+                  className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-slate-600 hover:bg-slate-50 ${
+                    isCollapsed ? 'justify-center' : ''
+                  }`}
+                  title={isCollapsed ? 'Cover Letter' : ''}
+                >
+                  <Mail className="w-5 h-5 flex-shrink-0" />
+                  {!isCollapsed && (
+                    <>
+                      <span className="text-sm flex-1 text-left">Cover Letter</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${isCoverLetterExpanded ? 'rotate-180' : ''}`} />
+                    </>
+                  )}
+                </button>
+
+                {isCoverLetterExpanded && !isCollapsed && (
                   <ul className="mt-1 ml-6 space-y-1">
                     {coverLetterItems.map((item) => {
                       const Icon = item.icon;
@@ -171,48 +213,36 @@ export function Layout() {
                   </ul>
                 )}
               </li>
+            </ul>
+          </div>
 
-              {secondaryItems.map((item) => {
-                const Icon = item.icon;
-                const isActive = location.pathname === item.path;
-                return (
-                  <li key={item.path}>
-                    <Link
-                      to={item.path}
-                      className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
-                        isActive
-                          ? 'bg-blue-50 text-blue-700'
-                          : 'text-slate-600 hover:bg-slate-50'
-                      } ${isCollapsed ? 'justify-center' : ''}`}
-                      title={isCollapsed ? item.label : ''}
-                    >
-                      <Icon className="w-5 h-5 flex-shrink-0" />
-                      {!isCollapsed && <span className="text-sm">{item.label}</span>}
-                    </Link>
-                  </li>
-                );
-              })}
-
+          <div className="mt-6 pt-6 border-t border-slate-200">
+            {!isCollapsed && (
+              <p className="px-3 mb-2 text-xs uppercase tracking-wide text-slate-500">
+                My background
+              </p>
+            )}
+            <ul className="space-y-1">
               <li>
                 <button
-                  onClick={() => setIsInfoExpanded(!isInfoExpanded)}
+                  onClick={() => setIsBackgroundExpanded(!isBackgroundExpanded)}
                   className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-slate-600 hover:bg-slate-50 ${
                     isCollapsed ? 'justify-center' : ''
                   }`}
-                  title={isCollapsed ? 'Your Information' : ''}
+                  title={isCollapsed ? 'My background' : ''}
                 >
                   <User className="w-5 h-5 flex-shrink-0" />
                   {!isCollapsed && (
                     <>
-                      <span className="text-sm flex-1 text-left">Your Information</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform ${isInfoExpanded ? 'rotate-180' : ''}`} />
+                      <span className="text-sm flex-1 text-left">My background</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${isBackgroundExpanded ? 'rotate-180' : ''}`} />
                     </>
                   )}
                 </button>
 
-                {isInfoExpanded && !isCollapsed && (
+                {isBackgroundExpanded && !isCollapsed && (
                   <ul className="mt-1 ml-6 space-y-1">
-                    {infoItems.map((item) => {
+                    {backgroundItems.map((item) => {
                       const Icon = item.icon;
                       const isActive = location.pathname === item.path;
                       return (
