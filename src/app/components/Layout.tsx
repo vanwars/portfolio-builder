@@ -1,10 +1,12 @@
 import { Outlet, Link, useLocation } from 'react-router';
-import { Home, Folder, FileText, Briefcase, User, ChevronLeft, ChevronRight, ChevronDown, Award, History, BookOpen } from 'lucide-react';
+import { Home, Folder, FileText, Briefcase, User, ChevronLeft, ChevronRight, ChevronDown, Award, History, BookOpen, Mail } from 'lucide-react';
 import { useState } from 'react';
 
 export function Layout() {
   const location = useLocation();
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isResumesExpanded, setIsResumesExpanded] = useState(false);
+  const [isCoverLettersExpanded, setIsCoverLettersExpanded] = useState(false);
   const [isInfoExpanded, setIsInfoExpanded] = useState(false);
 
   const sidebarItems = [
@@ -12,8 +14,17 @@ export function Layout() {
     { path: '/my-projects', label: 'My Projects', icon: Folder },
   ];
 
-  const secondaryItems = [
+  const resumeItems = [
     { path: '/resume-templates', label: 'Resume Templates', icon: FileText },
+    { path: '/my-resumes', label: "Resumes I've Made", icon: FileText },
+  ];
+
+  const coverLetterItems = [
+    { path: '/cover-letter-guide', label: 'How to Write a Cover Letter', icon: Mail },
+    { path: '/my-cover-letters', label: "Cover Letters I've Made", icon: Mail },
+  ];
+
+  const secondaryItems = [
     { path: '/portfolio-templates', label: 'Portfolio Templates', icon: Briefcase },
   ];
 
@@ -77,6 +88,90 @@ export function Layout() {
               </p>
             )}
             <ul className="space-y-1">
+              <li>
+                <button
+                  onClick={() => setIsResumesExpanded(!isResumesExpanded)}
+                  className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-slate-600 hover:bg-slate-50 ${
+                    isCollapsed ? 'justify-center' : ''
+                  }`}
+                  title={isCollapsed ? 'Resumes' : ''}
+                >
+                  <FileText className="w-5 h-5 flex-shrink-0" />
+                  {!isCollapsed && (
+                    <>
+                      <span className="text-sm flex-1 text-left">Resumes</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${isResumesExpanded ? 'rotate-180' : ''}`} />
+                    </>
+                  )}
+                </button>
+
+                {isResumesExpanded && !isCollapsed && (
+                  <ul className="mt-1 ml-6 space-y-1">
+                    {resumeItems.map((item) => {
+                      const Icon = item.icon;
+                      const isActive = location.pathname === item.path;
+                      return (
+                        <li key={item.path}>
+                          <Link
+                            to={item.path}
+                            className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
+                              isActive
+                                ? 'bg-blue-50 text-blue-700'
+                                : 'text-slate-600 hover:bg-slate-50'
+                            }`}
+                          >
+                            <Icon className="w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm">{item.label}</span>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </li>
+
+              <li>
+                <button
+                  onClick={() => setIsCoverLettersExpanded(!isCoverLettersExpanded)}
+                  className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-slate-600 hover:bg-slate-50 ${
+                    isCollapsed ? 'justify-center' : ''
+                  }`}
+                  title={isCollapsed ? 'Cover Letters' : ''}
+                >
+                  <Mail className="w-5 h-5 flex-shrink-0" />
+                  {!isCollapsed && (
+                    <>
+                      <span className="text-sm flex-1 text-left">Cover Letters</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${isCoverLettersExpanded ? 'rotate-180' : ''}`} />
+                    </>
+                  )}
+                </button>
+
+                {isCoverLettersExpanded && !isCollapsed && (
+                  <ul className="mt-1 ml-6 space-y-1">
+                    {coverLetterItems.map((item) => {
+                      const Icon = item.icon;
+                      const isActive = location.pathname === item.path;
+                      return (
+                        <li key={item.path}>
+                          <Link
+                            to={item.path}
+                            className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
+                              isActive
+                                ? 'bg-blue-50 text-blue-700'
+                                : 'text-slate-600 hover:bg-slate-50'
+                            }`}
+                          >
+                            <Icon className="w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm">{item.label}</span>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </li>
+
               {secondaryItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = location.pathname === item.path;
