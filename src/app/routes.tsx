@@ -4,7 +4,11 @@ import { Dashboard } from "./components/Dashboard";
 import { MyProjects } from "./components/MyProjects";
 import { ResumeTemplates } from "./components/ResumeTemplates";
 import { PortfolioTemplates } from "./components/PortfolioTemplates";
+import { Bio } from "./components/Bio";
+import { Skills } from "./components/Skills";
 import { WorkHistory } from "./components/WorkHistory";
+import { Certifications } from "./components/Certifications";
+import { Publications } from "./components/Publications";
 import { ChooseProject } from "./components/ChooseProject";
 import { TellStory } from "./components/TellStory";
 import { YourContribution } from "./components/YourContribution";
@@ -26,7 +30,11 @@ export const router = createBrowserRouter([
       { path: "my-projects", Component: MyProjects },
       { path: "resume-templates", Component: ResumeTemplates },
       { path: "portfolio-templates", Component: PortfolioTemplates },
+      { path: "bio", Component: Bio },
+      { path: "skills", Component: Skills },
       { path: "work-history", Component: WorkHistory },
+      { path: "certifications", Component: Certifications },
+      { path: "publications", Component: Publications },
       { path: "choose-project", Component: ChooseProject },
       { path: "project/:id", Component: ProjectDetail },
       { path: "tell-story", Component: TellStory },
