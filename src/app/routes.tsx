@@ -1,13 +1,21 @@
 import { createBrowserRouter } from "react-router";
 import { Layout } from "./components/Layout";
 import { Dashboard } from "./components/Dashboard";
+import { MyProjects } from "./components/MyProjects";
+import { ResumeTemplates } from "./components/ResumeTemplates";
+import { PortfolioTemplates } from "./components/PortfolioTemplates";
+import { WorkHistory } from "./components/WorkHistory";
+import { ChooseProject } from "./components/ChooseProject";
+import { TellStory } from "./components/TellStory";
+import { YourContribution } from "./components/YourContribution";
+import { AddProof } from "./components/AddProof";
+import { AddScreenshot } from "./components/AddScreenshot";
+import { ConnectGithub } from "./components/ConnectGithub";
+import { IdentifySkills } from "./components/IdentifySkills";
+import { ImproveResumeBullet } from "./components/ImproveResumeBullet";
+import { BuildPortfolioEntry } from "./components/BuildPortfolioEntry";
+import { MatchToJob } from "./components/MatchToJob";
 import { ProjectDetail } from "./components/ProjectDetail";
-import { StoryBuilder } from "./components/StoryBuilder";
-import { SkillMap } from "./components/SkillMap";
-import { EvidenceBoard } from "./components/EvidenceBoard";
-import { BulletLab } from "./components/BulletLab";
-import { PortfolioBuilder } from "./components/PortfolioBuilder";
-import { JobMatchStudio } from "./components/JobMatchStudio";
 
 export const router = createBrowserRouter([
   {
@@ -15,14 +23,21 @@ export const router = createBrowserRouter([
     Component: Layout,
     children: [
       { index: true, Component: Dashboard },
-      { path: "projects", Component: Dashboard },
+      { path: "my-projects", Component: MyProjects },
+      { path: "resume-templates", Component: ResumeTemplates },
+      { path: "portfolio-templates", Component: PortfolioTemplates },
+      { path: "work-history", Component: WorkHistory },
+      { path: "choose-project", Component: ChooseProject },
       { path: "project/:id", Component: ProjectDetail },
-      { path: "story-builder", Component: StoryBuilder },
-      { path: "skill-map", Component: SkillMap },
-      { path: "evidence-board", Component: EvidenceBoard },
-      { path: "bullet-lab", Component: BulletLab },
-      { path: "portfolio-builder", Component: PortfolioBuilder },
-      { path: "job-match", Component: JobMatchStudio },
+      { path: "tell-story", Component: TellStory },
+      { path: "your-contribution", Component: YourContribution },
+      { path: "add-proof", Component: AddProof },
+      { path: "add-screenshot", Component: AddScreenshot },
+      { path: "connect-github", Component: ConnectGithub },
+      { path: "identify-skills", Component: IdentifySkills },
+      { path: "improve-bullet", Component: ImproveResumeBullet },
+      { path: "build-portfolio", Component: BuildPortfolioEntry },
+      { path: "match-job", Component: MatchToJob },
     ],
   },
 ]);
