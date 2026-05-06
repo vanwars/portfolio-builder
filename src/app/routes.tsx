@@ -24,6 +24,12 @@ import { ImproveResumeBullet } from "./components/ImproveResumeBullet";
 import { BuildPortfolioEntry } from "./components/BuildPortfolioEntry";
 import { MatchToJob } from "./components/MatchToJob";
 import { ProjectDetail } from "./components/ProjectDetail";
+import { SimpleResumeTemplate } from "./components/templates/SimpleResumeTemplate";
+import { ModernResumeTemplate } from "./components/templates/ModernResumeTemplate";
+import { TechnicalResumeTemplate } from "./components/templates/TechnicalResumeTemplate";
+import { GridPortfolioTemplate } from "./components/templates/GridPortfolioTemplate";
+import { CaseStudyPortfolioTemplate } from "./components/templates/CaseStudyPortfolioTemplate";
+import { TimelinePortfolioTemplate } from "./components/templates/TimelinePortfolioTemplate";
 
 export const router = createBrowserRouter([
   {
@@ -55,6 +61,12 @@ export const router = createBrowserRouter([
       { path: "improve-bullet", Component: ImproveResumeBullet },
       { path: "build-portfolio", Component: BuildPortfolioEntry },
       { path: "match-job", Component: MatchToJob },
+      { path: "resume-template/simple", Component: SimpleResumeTemplate },
+      { path: "resume-template/modern", Component: ModernResumeTemplate },
+      { path: "resume-template/technical", Component: TechnicalResumeTemplate },
+      { path: "portfolio-template/grid", Component: GridPortfolioTemplate },
+      { path: "portfolio-template/case-study", Component: CaseStudyPortfolioTemplate },
+      { path: "portfolio-template/timeline", Component: TimelinePortfolioTemplate },
     ],
   },
 ]);

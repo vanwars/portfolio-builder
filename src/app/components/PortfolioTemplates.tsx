@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { Layout as LayoutIcon } from 'lucide-react';
 
 export function PortfolioTemplates() {
@@ -7,18 +8,21 @@ export function PortfolioTemplates() {
       name: 'Grid Layout',
       description: 'Project cards in a grid. Clean and visual. Great for showing multiple projects.',
       preview: 'Grid of project cards with images and short descriptions.',
+      slug: 'grid',
     },
     {
       id: 2,
       name: 'Case Study',
       description: 'One project per page with detailed explanations. Good for fewer, deeper projects.',
       preview: 'Full-page case studies with process, challenges, and outcomes.',
+      slug: 'case-study',
     },
     {
       id: 3,
       name: 'Timeline',
       description: 'Projects shown in chronological order. Shows your progression over time.',
       preview: 'Timeline layout showing growth from early to recent projects.',
+      slug: 'timeline',
     },
   ];
 
@@ -48,12 +52,18 @@ export function PortfolioTemplates() {
                 <p className="text-slate-700 mb-4">{template.description}</p>
                 <p className="text-slate-600 mb-6">{template.preview}</p>
                 <div className="flex gap-3">
-                  <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all">
+                  <Link
+                    to="/my-projects"
+                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all inline-block"
+                  >
                     Use this template
-                  </button>
-                  <button className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-all">
+                  </Link>
+                  <Link
+                    to={`/portfolio-template/${template.slug}`}
+                    className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-all inline-block"
+                  >
                     Preview
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

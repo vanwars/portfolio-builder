@@ -8,18 +8,21 @@ export function ResumeTemplates() {
       name: 'Simple',
       description: 'Clean, one-column layout. Good for entry-level positions.',
       preview: 'Simple layout with clear sections for education, experience, and skills.',
+      slug: 'simple',
     },
     {
       id: 2,
       name: 'Modern',
       description: 'Two-column design with a sidebar. Shows technical skills prominently.',
       preview: 'Modern design with skills sidebar and project highlights.',
+      slug: 'modern',
     },
     {
       id: 3,
       name: 'Technical',
       description: 'Focused on projects and technical experience. Great for software roles.',
       preview: 'Project-focused layout with detailed technical descriptions.',
+      slug: 'technical',
     },
   ];
 
@@ -55,9 +58,12 @@ export function ResumeTemplates() {
                   >
                     Use this template
                   </Link>
-                  <button className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-all">
+                  <Link
+                    to={`/resume-template/${template.slug}`}
+                    className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-all inline-block"
+                  >
                     Preview
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
