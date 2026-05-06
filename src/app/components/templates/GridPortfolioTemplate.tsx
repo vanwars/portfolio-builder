@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Github, ExternalLink, Image } from 'lucide-react';
 
 export function GridPortfolioTemplate() {
   return (
@@ -55,7 +55,7 @@ export function GridPortfolioTemplate() {
               {/* Project 1 */}
               <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-all group">
                 <div className="h-48 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-                  <div className="text-6xl text-blue-200">📅</div>
+                  <Image className="w-16 h-16 text-blue-300 stroke-[1.5]" />
                 </div>
                 <div className="p-6 space-y-3">
                   <h3 className="text-xl text-slate-900 group-hover:text-blue-600 transition-colors">
@@ -86,7 +86,7 @@ export function GridPortfolioTemplate() {
               {/* Project 2 */}
               <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-all group">
                 <div className="h-48 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
-                  <div className="text-6xl text-purple-200">🌤️</div>
+                  <Image className="w-16 h-16 text-purple-300 stroke-[1.5]" />
                 </div>
                 <div className="p-6 space-y-3">
                   <h3 className="text-xl text-slate-900 group-hover:text-blue-600 transition-colors">
@@ -117,7 +117,7 @@ export function GridPortfolioTemplate() {
               {/* Project 3 */}
               <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-all group">
                 <div className="h-48 bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
-                  <div className="text-6xl text-green-200">📊</div>
+                  <Image className="w-16 h-16 text-green-300 stroke-[1.5]" />
                 </div>
                 <div className="p-6 space-y-3">
                   <h3 className="text-xl text-slate-900 group-hover:text-blue-600 transition-colors">
@@ -144,7 +144,7 @@ export function GridPortfolioTemplate() {
               {/* Project 4 */}
               <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-all group">
                 <div className="h-48 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
-                  <div className="text-6xl text-orange-200">💬</div>
+                  <Image className="w-16 h-16 text-orange-300 stroke-[1.5]" />
                 </div>
                 <div className="p-6 space-y-3">
                   <h3 className="text-xl text-slate-900 group-hover:text-blue-600 transition-colors">

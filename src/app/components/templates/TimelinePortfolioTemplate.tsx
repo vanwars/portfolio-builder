@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Github, ExternalLink, Image } from 'lucide-react';
 
 export function TimelinePortfolioTemplate() {
   return (
@@ -71,7 +71,7 @@ export function TimelinePortfolioTemplate() {
                       <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
                         <div className="flex items-start justify-between mb-3">
                           <h3 className="text-xl text-slate-900">Course Scheduler App</h3>
-                          <div className="text-4xl text-blue-200">📅</div>
+                          <Image className="w-10 h-10 text-blue-300 stroke-[1.5] flex-shrink-0" />
                         </div>
                         <p className="text-slate-600 text-sm mb-4">
                           Built a full-stack web application for students to manage course schedules. Developed
@@ -115,7 +115,7 @@ export function TimelinePortfolioTemplate() {
                       <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
                         <div className="flex items-start justify-between mb-3">
                           <h3 className="text-xl text-slate-900">Weather Dashboard</h3>
-                          <div className="text-4xl text-purple-200">🌤️</div>
+                          <Image className="w-10 h-10 text-purple-300 stroke-[1.5] flex-shrink-0" />
                         </div>
                         <p className="text-slate-600 text-sm mb-4 md:text-right">
                           Created a responsive weather dashboard using Vue.js and the OpenWeather API.
@@ -161,7 +161,7 @@ export function TimelinePortfolioTemplate() {
                       <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
                         <div className="flex items-start justify-between mb-3">
                           <h3 className="text-xl text-slate-900">Data Visualization Tool</h3>
-                          <div className="text-4xl text-green-200">📊</div>
+                          <Image className="w-10 h-10 text-green-300 stroke-[1.5] flex-shrink-0" />
                         </div>
                         <p className="text-slate-600 text-sm mb-4">
                           Built a Python Flask application that processes CSV data and generates interactive
@@ -201,7 +201,7 @@ export function TimelinePortfolioTemplate() {
                       <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
                         <div className="flex items-start justify-between mb-3">
                           <h3 className="text-xl text-slate-900">Portfolio Website (v1)</h3>
-                          <div className="text-4xl text-orange-200">🌐</div>
+                          <Image className="w-10 h-10 text-orange-300 stroke-[1.5] flex-shrink-0" />
                         </div>
                         <p className="text-slate-600 text-sm mb-4 md:text-right">
                           My first web project - a personal portfolio site built with HTML, CSS, and vanilla JavaScript.
