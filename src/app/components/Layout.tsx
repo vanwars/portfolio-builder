@@ -1,4 +1,4 @@
-import { Outlet, Link, useLocation } from 'react-router';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Home, Folder, FileText, Briefcase, User, ChevronLeft, ChevronRight, ChevronDown, Award, History, BookOpen, Mail } from 'lucide-react';
 import { useState } from 'react';
 
@@ -42,7 +42,7 @@ export function Layout() {
         <div className={`p-6 border-b border-slate-200 flex items-center justify-between ${isCollapsed ? 'px-4' : ''}`}>
           {!isCollapsed && (
             <Link to="/" className="text-xl text-slate-900">
-              Experience Studio
+              DraftPath
             </Link>
           )}
           <button

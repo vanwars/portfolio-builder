@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, Download, Mail, MapPin, Github, Linkedin } from 'lucide-react';
 
 export function ModernResumeTemplate() {

@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Plus, FileText, Download, Edit } from 'lucide-react';
 
 export function MyResumes() {

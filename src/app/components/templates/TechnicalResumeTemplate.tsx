@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, Download, ExternalLink } from 'lucide-react';
 
 export function TechnicalResumeTemplate() {

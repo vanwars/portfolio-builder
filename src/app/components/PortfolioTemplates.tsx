@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Layout as LayoutIcon } from 'lucide-react';
 
 export function PortfolioTemplates() {

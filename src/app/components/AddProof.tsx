@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Github, Image, Link2, FileText } from 'lucide-react';
 
 export function AddProof() {

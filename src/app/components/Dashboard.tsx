@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 export function Dashboard() {
@@ -6,10 +6,13 @@ export function Dashboard() {
     <div className="space-y-16">
       <div className="space-y-3">
         <h1 className="text-3xl text-slate-900">
-          Experience Studio
+          DraftPath
         </h1>
+        <p className="text-sm font-medium text-slate-500 uppercase tracking-wide">
+          Translate experience into evidence-backed career materials.
+        </p>
         <p className="text-lg text-slate-600">
-          Turn the work you've done into clear, evidence-backed stories that show what you know, how you think, and what you can contribute.
+          A guided platform for helping learners, workers, and career changers communicate their skills, decisions, contributions, and growth across resumes, portfolios, interviews, and advancement opportunities.
         </p>
       </div>
 

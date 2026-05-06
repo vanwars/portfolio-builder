@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, Check } from 'lucide-react';
 import { useState } from 'react';
 
