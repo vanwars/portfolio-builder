@@ -1,30 +1,21 @@
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Github, ExternalLink, ChevronRight } from 'lucide-react';
+import { Github, ExternalLink, ChevronRight, Image } from 'lucide-react';
+import type { Palette } from '../../lib/palettes';
 
-export function CaseStudyPortfolioTemplate() {
+interface CaseStudyPortfolioTemplateProps {
+  palette: Palette;
+}
+
+export function CaseStudyPortfolioTemplate({ palette }: CaseStudyPortfolioTemplateProps) {
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <Link to="/portfolio-templates" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900">
-          <ArrowLeft className="w-4 h-4" />
-          Back to templates
-        </Link>
-        <Link
-          to="/my-projects"
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
-        >
-          Use this template
-        </Link>
-      </div>
-
-      <div className="bg-white border-2 border-slate-300 rounded-lg shadow-lg">
+      <div className="border-2 border-slate-300 rounded-lg shadow-lg" style={{ backgroundColor: palette.colors.background }}>
         {/* Navigation */}
         <div className="border-b border-slate-200 p-6">
           <div className="max-w-5xl mx-auto flex items-center justify-between">
             <h1 className="text-xl text-slate-900">Your Name</h1>
             <nav className="flex gap-6 text-sm">
               <a href="#" className="text-slate-600 hover:text-slate-900">Home</a>
-              <a href="#" className="text-blue-600">Projects</a>
+              <a href="#" style={{ color: palette.colors.accent }}>Projects</a>
               <a href="#" className="text-slate-600 hover:text-slate-900">About</a>
               <a href="#" className="text-slate-600 hover:text-slate-900">Contact</a>
             </nav>
@@ -32,10 +23,10 @@ export function CaseStudyPortfolioTemplate() {
         </div>
 
         {/* Project Hero */}
-        <div className="p-12 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="p-12" style={{ background: `linear-gradient(to bottom right, ${palette.colors.primaryLight}, ${palette.colors.secondaryLight})` }}>
           <div className="max-w-5xl mx-auto">
             <div className="mb-3">
-              <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Case Study</span>
+              <span className="px-3 py-1 rounded-full" style={{ backgroundColor: palette.colors.primaryLight, color: palette.colors.primaryDark }}>Case Study</span>
             </div>
             <h2 className="text-4xl text-slate-900 mb-4">Course Scheduler App</h2>
             <p className="text-xl text-slate-600 mb-6">
@@ -55,16 +46,16 @@ export function CaseStudyPortfolioTemplate() {
         </div>
 
         {/* Project Image */}
-        <div className="px-12 pt-12">
+        <div className="px-12 pt-12" style={{ backgroundColor: palette.colors.background }}>
           <div className="max-w-5xl mx-auto">
-            <div className="h-96 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center border border-slate-200">
-              <div className="text-8xl text-blue-300">📅</div>
+            <div className="h-96 rounded-lg flex items-center justify-center border border-slate-200" style={{ background: `linear-gradient(to bottom right, ${palette.colors.primaryLight}, ${palette.colors.secondaryLight})` }}>
+              <Image className="w-32 h-32 stroke-[1.5]" style={{ color: palette.colors.primary }} />
             </div>
           </div>
         </div>
 
         {/* Project Details */}
-        <div className="p-12">
+        <div className="p-12" style={{ backgroundColor: palette.colors.background }}>
           <div className="max-w-5xl mx-auto space-y-12">
             {/* Overview */}
             <div className="grid grid-cols-3 gap-8">
@@ -114,21 +105,21 @@ export function CaseStudyPortfolioTemplate() {
               <h3 className="text-2xl text-slate-900 mb-4">What I Learned</h3>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex gap-3">
-                  <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <ChevronRight className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: palette.colors.accent }} />
                   <span>
                     <strong>Working with APIs:</strong> This was my first time connecting a React frontend
                     to a REST API, and I learned a lot about async/await, error handling, and state management.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <ChevronRight className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: palette.colors.accent }} />
                   <span>
                     <strong>Team collaboration:</strong> Working with a backend developer taught me the importance
                     of clear API contracts and good communication about data structures.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <ChevronRight className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: palette.colors.accent }} />
                   <span>
                     <strong>User experience:</strong> I realized how important it is to handle loading states
                     and error messages well - users need to know what's happening.
@@ -138,7 +129,7 @@ export function CaseStudyPortfolioTemplate() {
             </div>
 
             {/* Technologies Deep Dive */}
-            <div className="bg-slate-50 border border-slate-200 rounded-lg p-8">
+            <div className="border rounded-lg p-8" style={{ backgroundColor: palette.colors.secondaryLight, borderColor: palette.colors.border }}>
               <h3 className="text-xl text-slate-900 mb-4">Technical Implementation</h3>
               <div className="space-y-4 text-slate-700">
                 <div>
@@ -168,30 +159,20 @@ export function CaseStudyPortfolioTemplate() {
         </div>
 
         {/* Next Project */}
-        <div className="p-12 bg-slate-50 border-t border-slate-200">
+        <div className="p-12 bg-sage-50 border-t border-sage-200">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-slate-500 mb-1">Next Project</p>
                 <h3 className="text-2xl text-slate-900">Weather Dashboard</h3>
               </div>
-              <a href="#" className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all">
+              <a href="#" className="flex items-center gap-2 px-6 py-3 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all">
                 View Case Study
                 <ChevronRight className="w-5 h-5" />
               </a>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-        <h3 className="text-slate-900 mb-2">About this template</h3>
-        <p className="text-slate-700 text-sm">
-          The Case Study template provides in-depth coverage of individual projects. Each project gets
-          its own detailed page with sections for the challenge, your contribution, what you learned,
-          and technical implementation details. Great for showing thoughtful reflection and deep
-          understanding of your work, especially for portfolios with 2-4 well-developed projects.
-        </p>
       </div>
     </div>
   );

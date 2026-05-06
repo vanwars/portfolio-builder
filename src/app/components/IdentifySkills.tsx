@@ -52,7 +52,7 @@ export function IdentifySkills() {
             key={skill.name}
             className={`w-full text-left border-2 rounded-lg p-6 transition-all ${
               skill.selected
-                ? 'border-blue-400 bg-blue-50'
+                ? 'border-blue-400 bg-sage-50'
                 : 'border-slate-200 bg-white hover:border-slate-300'
             }`}
           >
@@ -60,7 +60,7 @@ export function IdentifySkills() {
               <div
                 className={`w-6 h-6 border-2 rounded flex items-center justify-center flex-shrink-0 mt-0.5 ${
                   skill.selected
-                    ? 'border-blue-600 bg-blue-600'
+                    ? 'border-blue-600 bg-terracotta-600'
                     : 'border-slate-300 bg-white'
                 }`}
               >
@@ -92,7 +92,7 @@ export function IdentifySkills() {
         ))}
       </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <div className="bg-sage-50 border border-sage-200 rounded-lg p-6">
         <p className="text-slate-700 mb-3">
           <strong>What do these labels mean?</strong>
         </p>
@@ -115,7 +115,7 @@ export function IdentifySkills() {
       <div className="flex gap-4 pt-6">
         <Link
           to="/improve-bullet"
-          className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+          className="flex items-center gap-2 px-6 py-3 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all"
         >
           Continue
           <ArrowRight className="w-4 h-4" />

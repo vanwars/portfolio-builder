@@ -1,7 +1,17 @@
 import { Link } from 'react-router-dom';
 import { Layout as LayoutIcon } from 'lucide-react';
+import { useState } from 'react';
+import { Sheet } from './Sheet';
+import { PaletteSelector } from './PaletteSelector';
+import { GridPortfolioTemplate } from './templates/GridPortfolioTemplate';
+import { CaseStudyPortfolioTemplate } from './templates/CaseStudyPortfolioTemplate';
+import { TimelinePortfolioTemplate } from './templates/TimelinePortfolioTemplate';
+import { palettes } from '../lib/palettes';
 
 export function PortfolioTemplates() {
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null);
+  const [selectedPalette, setSelectedPalette] = useState(palettes[0]);
   const templates = [
     {
       id: 1,
@@ -39,7 +49,7 @@ export function PortfolioTemplates() {
         {templates.map((template) => (
           <div
             key={template.id}
-            className="bg-white border-2 border-slate-200 rounded-lg overflow-hidden hover:border-blue-400 transition-all"
+            className="bg-white border-2 border-slate-200 rounded-lg overflow-hidden hover:border-sage-600 transition-all"
           >
             <div className="flex">
               <div className="w-48 bg-slate-50 border-r border-slate-200 flex items-center justify-center p-8">
@@ -54,16 +64,19 @@ export function PortfolioTemplates() {
                 <div className="flex gap-3">
                   <Link
                     to="/my-projects"
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all inline-block"
+                    className="px-4 py-2 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all inline-block"
                   >
                     Use this template
                   </Link>
-                  <Link
-                    to={`/portfolio-template/${template.slug}`}
-                    className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-all inline-block"
+                  <button
+                    onClick={() => {
+                      setSelectedTemplate(template.slug);
+                      setPreviewOpen(true);
+                    }}
+                    className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-all"
                   >
                     Preview
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
@@ -72,7 +85,7 @@ export function PortfolioTemplates() {
       </div>
 
       <div className="space-y-4">
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="bg-sage-50 border border-sage-200 rounded-lg p-6">
           <p className="text-slate-700 mb-3">
             <strong>How this works:</strong> Choose a template and we'll create a simple portfolio website with your
             projects. You can publish it online or download it to host yourself.
@@ -89,6 +102,13 @@ export function PortfolioTemplates() {
           </ul>
         </div>
       </div>
+
+      <Sheet open={previewOpen} onOpenChange={setPreviewOpen}>
+        <PaletteSelector selectedPalette={selectedPalette} onPaletteChange={setSelectedPalette} />
+        {selectedTemplate === 'grid' && <GridPortfolioTemplate palette={selectedPalette} />}
+        {selectedTemplate === 'case-study' && <CaseStudyPortfolioTemplate palette={selectedPalette} />}
+        {selectedTemplate === 'timeline' && <TimelinePortfolioTemplate palette={selectedPalette} />}
+      </Sheet>
     </div>
   );
 }

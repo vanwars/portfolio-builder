@@ -31,7 +31,7 @@ export function Bio() {
           </p>
         </div>
 
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="bg-sage-50 border border-sage-200 rounded-lg p-6">
           <h3 className="text-lg text-slate-900 mb-3">Tips for writing your bio</h3>
           <ul className="space-y-2 text-slate-700">
             <li>• Start with who you are (student, your major, your school)</li>
@@ -42,7 +42,7 @@ export function Bio() {
           </ul>
         </div>
 
-        <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all">
+        <button className="px-6 py-3 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all">
           Save bio
         </button>
       </div>

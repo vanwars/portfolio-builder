@@ -22,17 +22,17 @@ export function Dashboard() {
 
           <Link
             to="/project/1"
-            className="block bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl p-8 hover:border-blue-400 hover:shadow-lg transition-all group"
+            className="block bg-gradient-to-br from-sage-50 to-sage-200 border-2 border-sage-200 rounded-xl p-8 hover:border-sage-600 hover:shadow-lg transition-all group"
           >
             <div className="space-y-4">
               <div>
-                <h3 className="text-2xl text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
+                <h3 className="text-2xl text-slate-900 mb-2 group-hover:text-terracotta-700 transition-colors">
                   Continue: Course Scheduler App
                 </h3>
                 <p className="text-slate-700">CS 361 - Software Engineering</p>
               </div>
 
-              <div className="flex items-center gap-2 text-blue-700">
+              <div className="flex items-center gap-2 text-terracotta-700">
                 <span className="text-sm font-medium">Continue reflecting on your project</span>
                 <ArrowRight className="w-5 h-5" />
               </div>

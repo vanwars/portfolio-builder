@@ -1,28 +1,8 @@
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Download, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 export function TechnicalResumeTemplate() {
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <Link to="/resume-templates" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900">
-          <ArrowLeft className="w-4 h-4" />
-          Back to templates
-        </Link>
-        <div className="flex gap-3">
-          <button className="flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-all">
-            <Download className="w-4 h-4" />
-            Download PDF
-          </button>
-          <Link
-            to="/resume-builder"
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
-          >
-            Use this template
-          </Link>
-        </div>
-      </div>
-
       <div className="bg-white border-2 border-slate-300 rounded-lg shadow-lg max-w-3xl mx-auto">
         <div className="p-10 space-y-5">
           {/* Header */}
@@ -51,7 +31,7 @@ export function TechnicalResumeTemplate() {
               <div className="flex items-baseline justify-between">
                 <div className="flex items-baseline gap-2">
                   <h3 className="text-slate-900 font-medium">Course Scheduler App</h3>
-                  <a href="#" className="text-blue-600 hover:text-blue-700">
+                  <a href="#" className="text-terracotta-600 hover:text-terracotta-700">
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
@@ -75,7 +55,7 @@ export function TechnicalResumeTemplate() {
               <div className="flex items-baseline justify-between">
                 <div className="flex items-baseline gap-2">
                   <h3 className="text-slate-900 font-medium">Weather Dashboard</h3>
-                  <a href="#" className="text-blue-600 hover:text-blue-700">
+                  <a href="#" className="text-terracotta-600 hover:text-terracotta-700">
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
@@ -99,7 +79,7 @@ export function TechnicalResumeTemplate() {
               <div className="flex items-baseline justify-between">
                 <div className="flex items-baseline gap-2">
                   <h3 className="text-slate-900 font-medium">Data Visualization Tool</h3>
-                  <a href="#" className="text-blue-600 hover:text-blue-700">
+                  <a href="#" className="text-terracotta-600 hover:text-terracotta-700">
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
@@ -144,16 +124,6 @@ export function TechnicalResumeTemplate() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-3xl mx-auto">
-        <h3 className="text-slate-900 mb-2">About this template</h3>
-        <p className="text-slate-700 text-sm">
-          The Technical template is project-focused with detailed descriptions of your technical work.
-          It emphasizes the technologies used and includes multiple bullet points per project to show
-          depth of experience. Great for software engineering roles where you want to showcase specific
-          technical accomplishments and implementation details.
-        </p>
       </div>
     </div>
   );

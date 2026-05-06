@@ -68,7 +68,7 @@ export function Layout() {
                     to={item.path}
                     className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
                       isActive
-                        ? 'bg-blue-50 text-blue-700'
+                        ? 'bg-sage-50 text-terracotta-700'
                         : 'text-slate-700 hover:bg-slate-50'
                     } ${isCollapsed ? 'justify-center' : ''}`}
                     title={isCollapsed ? item.label : ''}
@@ -116,7 +116,7 @@ export function Layout() {
                             to={item.path}
                             className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
                               isActive
-                                ? 'bg-blue-50 text-blue-700'
+                                ? 'bg-sage-50 text-terracotta-700'
                                 : 'text-slate-600 hover:bg-slate-50'
                             }`}
                           >
@@ -158,7 +158,7 @@ export function Layout() {
                             to={item.path}
                             className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
                               isActive
-                                ? 'bg-blue-50 text-blue-700'
+                                ? 'bg-sage-50 text-terracotta-700'
                                 : 'text-slate-600 hover:bg-slate-50'
                             }`}
                           >
@@ -200,7 +200,7 @@ export function Layout() {
                             to={item.path}
                             className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
                               isActive
-                                ? 'bg-blue-50 text-blue-700'
+                                ? 'bg-sage-50 text-terracotta-700'
                                 : 'text-slate-600 hover:bg-slate-50'
                             }`}
                           >
@@ -251,7 +251,7 @@ export function Layout() {
                             to={item.path}
                             className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
                               isActive
-                                ? 'bg-blue-50 text-blue-700'
+                                ? 'bg-sage-50 text-terracotta-700'
                                 : 'text-slate-600 hover:bg-slate-50'
                             }`}
                           >

@@ -30,7 +30,7 @@ export function ImproveResumeBullet() {
 
         <div>
           <p className="text-slate-700 mb-3">Here's a stronger version:</p>
-          <div className="bg-blue-50 border-2 border-blue-400 rounded-lg p-6">
+          <div className="bg-sage-50 border-2 border-blue-400 rounded-lg p-6">
             <p className="text-slate-900 text-lg">
               Developed frontend views in React and connected them to backend API endpoints to enable students to view
               and manage course schedules
@@ -66,7 +66,7 @@ export function ImproveResumeBullet() {
         </div>
       </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <div className="bg-sage-50 border border-sage-200 rounded-lg p-6">
         <p className="text-slate-700">
           <strong>Remember:</strong> This bullet should feel true to what you actually did. If it doesn't, we can
           adjust it. The goal is to sound professional while staying honest.
@@ -76,7 +76,7 @@ export function ImproveResumeBullet() {
       <div className="flex gap-4 pt-6">
         <Link
           to="/build-portfolio"
-          className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+          className="flex items-center gap-2 px-6 py-3 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all"
         >
           Continue
           <ArrowRight className="w-4 h-4" />

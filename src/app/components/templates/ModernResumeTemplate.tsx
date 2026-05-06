@@ -1,28 +1,8 @@
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Download, Mail, MapPin, Github, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin } from 'lucide-react';
 
 export function ModernResumeTemplate() {
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <Link to="/resume-templates" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900">
-          <ArrowLeft className="w-4 h-4" />
-          Back to templates
-        </Link>
-        <div className="flex gap-3">
-          <button className="flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-all">
-            <Download className="w-4 h-4" />
-            Download PDF
-          </button>
-          <Link
-            to="/resume-builder"
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
-          >
-            Use this template
-          </Link>
-        </div>
-      </div>
-
       <div className="bg-white border-2 border-slate-300 rounded-lg shadow-lg max-w-4xl mx-auto">
         <div className="flex">
           {/* Sidebar */}
@@ -101,9 +81,9 @@ export function ModernResumeTemplate() {
                   to view and manage course schedules
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded">React</span>
-                  <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded">REST API</span>
-                  <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded">JavaScript</span>
+                  <span className="px-2 py-1 bg-sage-50 text-terracotta-700 text-xs rounded">React</span>
+                  <span className="px-2 py-1 bg-sage-50 text-terracotta-700 text-xs rounded">REST API</span>
+                  <span className="px-2 py-1 bg-sage-50 text-terracotta-700 text-xs rounded">JavaScript</span>
                 </div>
               </div>
 
@@ -117,9 +97,9 @@ export function ModernResumeTemplate() {
                   weather data
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded">Vue.js</span>
-                  <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded">API Integration</span>
-                  <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded">Responsive Design</span>
+                  <span className="px-2 py-1 bg-sage-50 text-terracotta-700 text-xs rounded">Vue.js</span>
+                  <span className="px-2 py-1 bg-sage-50 text-terracotta-700 text-xs rounded">API Integration</span>
+                  <span className="px-2 py-1 bg-sage-50 text-terracotta-700 text-xs rounded">Responsive Design</span>
                 </div>
               </div>
             </div>
@@ -139,15 +119,6 @@ export function ModernResumeTemplate() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-4xl mx-auto">
-        <h3 className="text-slate-900 mb-2">About this template</h3>
-        <p className="text-slate-700 text-sm">
-          The Modern template uses a two-column layout with a dark sidebar for contact info and skills.
-          It highlights technical skills prominently and uses tags to show technologies used in each project.
-          Great for technical roles where you want to make your skills immediately visible.
-        </p>
       </div>
     </div>
   );

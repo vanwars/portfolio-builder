@@ -26,7 +26,7 @@ export function MyResumes() {
         {hasResumes && (
           <Link
             to="/resume-templates"
-            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+            className="flex items-center gap-2 px-4 py-2 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all"
           >
             <Plus className="w-5 h-5" />
             New Resume
@@ -59,7 +59,7 @@ export function MyResumes() {
               <div className="flex gap-3 pt-4 border-t border-slate-100">
                 <Link
                   to={`/resume-builder/${resume.id}`}
-                  className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+                  className="flex items-center gap-2 px-4 py-2 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all"
                 >
                   <Edit className="w-4 h-4" />
                   Edit
@@ -81,7 +81,7 @@ export function MyResumes() {
           <p className="text-slate-600 mb-6">You haven't created any resumes yet</p>
           <Link
             to="/resume-templates"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all"
           >
             <Plus className="w-5 h-5" />
             Create your first resume
@@ -89,7 +89,7 @@ export function MyResumes() {
         </div>
       )}
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <div className="bg-sage-50 border border-sage-200 rounded-lg p-6">
         <h3 className="text-lg text-slate-900 mb-3">Why create multiple resumes?</h3>
         <p className="text-slate-700 mb-3">
           Different jobs want to see different things. You might have:

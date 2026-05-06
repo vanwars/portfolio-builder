@@ -62,7 +62,7 @@ export function ResumeBuilder() {
               onClick={() => setSelectedBio(!selectedBio)}
               className={`px-4 py-2 rounded-lg border-2 transition-all ${
                 selectedBio
-                  ? 'bg-blue-50 border-blue-400 text-blue-700'
+                  ? 'bg-sage-50 border-blue-400 text-terracotta-700'
                   : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300'
               }`}
             >
@@ -80,14 +80,14 @@ export function ResumeBuilder() {
           {bio ? (
             <div className="bg-slate-50 rounded-lg p-4">
               <p className="text-slate-700 text-sm">{bio}</p>
-              <Link to="/bio" className="text-sm text-blue-600 hover:text-blue-700 mt-2 inline-block">
+              <Link to="/bio" className="text-sm text-terracotta-600 hover:text-terracotta-700 mt-2 inline-block">
                 Edit bio
               </Link>
             </div>
           ) : (
             <div className="bg-slate-50 rounded-lg p-4">
               <p className="text-slate-600 text-sm mb-2">You haven't written a bio yet</p>
-              <Link to="/bio" className="text-sm text-blue-600 hover:text-blue-700">
+              <Link to="/bio" className="text-sm text-terracotta-600 hover:text-terracotta-700">
                 Add bio
               </Link>
             </div>
@@ -117,14 +117,14 @@ export function ResumeBuilder() {
                     }}
                     className={`w-full text-left border-2 rounded-lg p-4 transition-all ${
                       isSelected
-                        ? 'border-blue-400 bg-blue-50'
+                        ? 'border-blue-400 bg-sage-50'
                         : 'border-slate-200 bg-white hover:border-slate-300'
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className={`w-5 h-5 border-2 rounded flex items-center justify-center ${
-                          isSelected ? 'border-blue-600 bg-blue-600' : 'border-slate-300 bg-white'
+                          isSelected ? 'border-blue-600 bg-terracotta-600' : 'border-slate-300 bg-white'
                         }`}>
                           {isSelected && <Check className="w-3 h-3 text-white" />}
                         </div>
@@ -137,14 +137,14 @@ export function ResumeBuilder() {
                   </button>
                 );
               })}
-              <Link to="/skills" className="text-sm text-blue-600 hover:text-blue-700 inline-block mt-2">
+              <Link to="/skills" className="text-sm text-terracotta-600 hover:text-terracotta-700 inline-block mt-2">
                 Manage skills
               </Link>
             </div>
           ) : (
             <div className="bg-slate-50 rounded-lg p-4">
               <p className="text-slate-600 text-sm mb-2">You haven't added any skills yet</p>
-              <Link to="/skills" className="text-sm text-blue-600 hover:text-blue-700">
+              <Link to="/skills" className="text-sm text-terracotta-600 hover:text-terracotta-700">
                 Add skills
               </Link>
             </div>
@@ -174,13 +174,13 @@ export function ResumeBuilder() {
                     }}
                     className={`w-full text-left border-2 rounded-lg p-4 transition-all ${
                       isSelected
-                        ? 'border-blue-400 bg-blue-50'
+                        ? 'border-blue-400 bg-sage-50'
                         : 'border-slate-200 bg-white hover:border-slate-300'
                     }`}
                   >
                     <div className="flex items-start gap-3">
                       <div className={`w-5 h-5 border-2 rounded flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                        isSelected ? 'border-blue-600 bg-blue-600' : 'border-slate-300 bg-white'
+                        isSelected ? 'border-blue-600 bg-terracotta-600' : 'border-slate-300 bg-white'
                       }`}>
                         {isSelected && <Check className="w-3 h-3 text-white" />}
                       </div>
@@ -192,14 +192,14 @@ export function ResumeBuilder() {
                   </button>
                 );
               })}
-              <Link to="/my-projects" className="text-sm text-blue-600 hover:text-blue-700 inline-block mt-2">
+              <Link to="/my-projects" className="text-sm text-terracotta-600 hover:text-terracotta-700 inline-block mt-2">
                 Manage projects
               </Link>
             </div>
           ) : (
             <div className="bg-slate-50 rounded-lg p-4">
               <p className="text-slate-600 text-sm mb-2">You haven't added any projects yet</p>
-              <Link to="/my-projects" className="text-sm text-blue-600 hover:text-blue-700">
+              <Link to="/my-projects" className="text-sm text-terracotta-600 hover:text-terracotta-700">
                 Add projects
               </Link>
             </div>
@@ -220,7 +220,7 @@ export function ResumeBuilder() {
           ) : (
             <div className="bg-slate-50 rounded-lg p-4">
               <p className="text-slate-600 text-sm mb-2">You haven't added any work history yet</p>
-              <Link to="/work-history" className="text-sm text-blue-600 hover:text-blue-700">
+              <Link to="/work-history" className="text-sm text-terracotta-600 hover:text-terracotta-700">
                 Add work history
               </Link>
             </div>
@@ -241,7 +241,7 @@ export function ResumeBuilder() {
           ) : (
             <div className="bg-slate-50 rounded-lg p-4">
               <p className="text-slate-600 text-sm mb-2">You haven't added any certifications yet</p>
-              <Link to="/certifications" className="text-sm text-blue-600 hover:text-blue-700">
+              <Link to="/certifications" className="text-sm text-terracotta-600 hover:text-terracotta-700">
                 Add certifications
               </Link>
             </div>
@@ -264,7 +264,7 @@ export function ResumeBuilder() {
           </label>
 
           <div className="flex gap-3">
-            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all">
+            <button className="px-6 py-3 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all">
               Save resume
             </button>
             <Link
@@ -277,7 +277,7 @@ export function ResumeBuilder() {
         </div>
       </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <div className="bg-sage-50 border border-sage-200 rounded-lg p-6">
         <p className="text-slate-700 text-sm">
           <strong>Next step:</strong> After you save this resume, you'll be able to download it as a PDF
           or edit it to create different versions for different types of jobs.

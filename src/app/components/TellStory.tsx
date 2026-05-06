@@ -34,7 +34,7 @@ export function TellStory() {
           </p>
         </div>
 
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="bg-sage-50 border border-sage-200 rounded-lg p-6">
           <p className="text-slate-700">
             <strong>Tip:</strong> Don't worry about making this sound professional yet. Just describe what the project
             was for and what it did. We'll help you refine it later.
@@ -45,7 +45,7 @@ export function TellStory() {
       <div className="flex gap-4 pt-6">
         <Link
           to="/your-contribution"
-          className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+          className="flex items-center gap-2 px-6 py-3 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all"
         >
           Continue
           <ArrowRight className="w-4 h-4" />

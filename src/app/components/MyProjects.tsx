@@ -52,7 +52,7 @@ export function MyProjects() {
           <p className="text-lg text-slate-600 mb-6">You haven't added any projects yet.</p>
           <Link
             to="/choose-project"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all"
           >
             <Plus className="w-5 h-5" />
             Add your first project
@@ -63,7 +63,7 @@ export function MyProjects() {
       <div className="pt-6 border-t border-slate-200">
         <Link
           to="/choose-project"
-          className="text-blue-600 hover:text-blue-700 text-sm"
+          className="text-terracotta-600 hover:text-terracotta-700 text-sm"
         >
           + Add another project
         </Link>

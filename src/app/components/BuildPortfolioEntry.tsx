@@ -106,7 +106,7 @@ export function BuildPortfolioEntry() {
       <div className="flex gap-4 pt-6">
         <Link
           to="/match-job"
-          className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+          className="flex items-center gap-2 px-6 py-3 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all"
         >
           Continue
           <ArrowRight className="w-4 h-4" />

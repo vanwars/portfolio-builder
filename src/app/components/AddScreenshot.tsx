@@ -14,7 +14,7 @@ export function AddScreenshot() {
       </div>
 
       <div className="space-y-8">
-        <div className="border-2 border-dashed border-slate-300 rounded-lg p-12 text-center hover:border-blue-400 hover:bg-blue-50 transition-all cursor-pointer">
+        <div className="border-2 border-dashed border-slate-300 rounded-lg p-12 text-center hover:border-sage-600 hover:bg-sage-50 transition-all cursor-pointer">
           <div className="flex flex-col items-center gap-4">
             <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center">
               <Upload className="w-8 h-8 text-slate-600" />
@@ -27,39 +27,39 @@ export function AddScreenshot() {
           </div>
         </div>
 
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="bg-sage-50 border border-sage-200 rounded-lg p-6">
           <h3 className="text-lg text-slate-900 mb-3">Tips for good screenshots</h3>
           <ul className="space-y-3 text-slate-700">
             <li className="flex items-start gap-2">
-              <span className="text-blue-600 mt-1">•</span>
+              <span className="text-terracotta-600 mt-1">•</span>
               <span>
                 <strong>Show your work, not just the final product.</strong> If you built a specific page or feature,
                 screenshot that part.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-blue-600 mt-1">•</span>
+              <span className="text-terracotta-600 mt-1">•</span>
               <span>
                 <strong>Make sure it's clear and readable.</strong> Take the screenshot on a larger screen if possible.
                 Avoid tiny text.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-blue-600 mt-1">•</span>
+              <span className="text-terracotta-600 mt-1">•</span>
               <span>
                 <strong>Remove personal or sensitive information.</strong> Blur out real student data, API keys, or
                 anything private.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-blue-600 mt-1">•</span>
+              <span className="text-terracotta-600 mt-1">•</span>
               <span>
                 <strong>Multiple screenshots are fine.</strong> If you worked on several features, you can upload more
                 than one.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-blue-600 mt-1">•</span>
+              <span className="text-terracotta-600 mt-1">•</span>
               <span>
                 <strong>Context helps.</strong> A screenshot of a form you built is more useful than a screenshot of a
                 login page everyone uses.
@@ -84,7 +84,7 @@ export function AddScreenshot() {
       <div className="flex gap-4 pt-6">
         <Link
           to="/identify-skills"
-          className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+          className="flex items-center gap-2 px-6 py-3 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all"
         >
           Continue
           <ArrowRight className="w-4 h-4" />

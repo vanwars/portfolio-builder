@@ -53,7 +53,7 @@ export function Certifications() {
               />
             </label>
 
-            <button className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all">
+            <button className="flex items-center gap-2 px-6 py-3 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all">
               <Plus className="w-5 h-5" />
               Add certification
             </button>
@@ -69,7 +69,7 @@ export function Certifications() {
           </div>
         </div>
 
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="bg-sage-50 border border-sage-200 rounded-lg p-6">
           <h3 className="text-lg text-slate-900 mb-3">What counts as a certification?</h3>
           <ul className="space-y-2 text-slate-700">
             <li>• Industry certifications (AWS, Google Cloud, CompTIA, etc.)</li>

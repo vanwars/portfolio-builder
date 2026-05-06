@@ -37,7 +37,7 @@ Nice to have:
 - Cloud deployment experience"
           ></textarea>
         </label>
-        <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all">
+        <button className="px-6 py-3 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all">
           Analyze this job
         </button>
       </div>
@@ -83,7 +83,7 @@ Nice to have:
           </div>
         </div>
 
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="bg-sage-50 border border-sage-200 rounded-lg p-6">
           <p className="text-slate-700 mb-3">
             <strong>What to do with this:</strong>
           </p>

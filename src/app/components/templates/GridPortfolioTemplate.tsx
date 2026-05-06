@@ -1,27 +1,18 @@
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Github, ExternalLink, Image } from 'lucide-react';
+import { Github, ExternalLink, Image } from 'lucide-react';
+import type { Palette } from '../../lib/palettes';
 
-export function GridPortfolioTemplate() {
+interface GridPortfolioTemplateProps {
+  palette: Palette;
+}
+
+export function GridPortfolioTemplate({ palette }: GridPortfolioTemplateProps) {
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <Link to="/portfolio-templates" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900">
-          <ArrowLeft className="w-4 h-4" />
-          Back to templates
-        </Link>
-        <Link
-          to="/my-projects"
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
-        >
-          Use this template
-        </Link>
-      </div>
-
-      <div className="bg-white border-2 border-slate-300 rounded-lg shadow-lg">
+      <div className="border-2 border-slate-300 rounded-lg shadow-lg" style={{ backgroundColor: palette.colors.background }}>
         {/* Portfolio Header */}
-        <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white p-16 text-center">
+        <div className="text-white p-16 text-center" style={{ background: `linear-gradient(to bottom right, ${palette.colors.primary}, ${palette.colors.primaryDark})` }}>
           <h1 className="text-4xl mb-3">Your Name</h1>
-          <p className="text-xl text-blue-100 mb-6">Computer Science Student & Web Developer</p>
+          <p className="text-xl mb-6" style={{ color: palette.colors.primaryLight }}>Computer Science Student & Web Developer</p>
           <div className="flex gap-4 justify-center">
             <a href="#" className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all">
               <Github className="w-5 h-5" />
@@ -35,7 +26,7 @@ export function GridPortfolioTemplate() {
         </div>
 
         {/* About Section */}
-        <div className="p-12 bg-slate-50 border-b border-slate-200">
+        <div className="p-12 border-b" style={{ backgroundColor: palette.colors.secondaryLight, borderColor: palette.colors.border }}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl text-slate-900 mb-4">About Me</h2>
             <p className="text-slate-700 leading-relaxed">
@@ -48,17 +39,17 @@ export function GridPortfolioTemplate() {
         </div>
 
         {/* Projects Grid */}
-        <div className="p-12">
+        <div className="p-12" style={{ backgroundColor: palette.colors.background }}>
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl text-slate-900 mb-8">Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Project 1 */}
-              <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-all group">
-                <div className="h-48 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-                  <Image className="w-16 h-16 text-blue-300 stroke-[1.5]" />
+              <div className="border rounded-lg overflow-hidden hover:shadow-lg transition-all group" style={{ backgroundColor: palette.colors.backgroundAlt, borderColor: palette.colors.border }}>
+                <div className="h-48 flex items-center justify-center" style={{ background: `linear-gradient(to bottom right, ${palette.colors.primaryLight}, ${palette.colors.primary}20)` }}>
+                  <Image className="w-16 h-16 stroke-[1.5]" style={{ color: palette.colors.primary }} />
                 </div>
-                <div className="p-6 space-y-3">
-                  <h3 className="text-xl text-slate-900 group-hover:text-blue-600 transition-colors">
+                <div className="p-6 space-y-3" style={{ backgroundColor: palette.colors.backgroundAlt }}>
+                  <h3 className="text-xl text-slate-900 transition-colors">
                     Course Scheduler App
                   </h3>
                   <p className="text-slate-600 text-sm">
@@ -66,16 +57,16 @@ export function GridPortfolioTemplate() {
                     Built with React and connected to a backend API.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded">React</span>
-                    <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded">JavaScript</span>
-                    <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded">REST API</span>
+                    <span className="px-2 py-1 text-xs rounded" style={{ backgroundColor: palette.colors.primaryLight, color: palette.colors.primaryDark }}>React</span>
+                    <span className="px-2 py-1 text-xs rounded" style={{ backgroundColor: palette.colors.primaryLight, color: palette.colors.primaryDark }}>JavaScript</span>
+                    <span className="px-2 py-1 text-xs rounded" style={{ backgroundColor: palette.colors.primaryLight, color: palette.colors.primaryDark }}>REST API</span>
                   </div>
                   <div className="flex gap-3 pt-2">
-                    <a href="#" className="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                    <a href="#" className="text-sm flex items-center gap-1" style={{ color: palette.colors.accent }}>
                       <Github className="w-4 h-4" />
                       Code
                     </a>
-                    <a href="#" className="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                    <a href="#" className="text-sm flex items-center gap-1" style={{ color: palette.colors.accent }}>
                       <ExternalLink className="w-4 h-4" />
                       Live Demo
                     </a>
@@ -84,12 +75,12 @@ export function GridPortfolioTemplate() {
               </div>
 
               {/* Project 2 */}
-              <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-all group">
-                <div className="h-48 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
-                  <Image className="w-16 h-16 text-purple-300 stroke-[1.5]" />
+              <div className="border rounded-lg overflow-hidden hover:shadow-lg transition-all group" style={{ backgroundColor: palette.colors.backgroundAlt, borderColor: palette.colors.border }}>
+                <div className="h-48 flex items-center justify-center" style={{ background: `linear-gradient(to bottom right, ${palette.colors.secondaryLight}, ${palette.colors.secondary}20)` }}>
+                  <Image className="w-16 h-16 stroke-[1.5]" style={{ color: palette.colors.secondary }} />
                 </div>
-                <div className="p-6 space-y-3">
-                  <h3 className="text-xl text-slate-900 group-hover:text-blue-600 transition-colors">
+                <div className="p-6 space-y-3" style={{ backgroundColor: palette.colors.backgroundAlt }}>
+                  <h3 className="text-xl text-slate-900 transition-colors">
                     Weather Dashboard
                   </h3>
                   <p className="text-slate-600 text-sm">
@@ -97,16 +88,16 @@ export function GridPortfolioTemplate() {
                     Shows current conditions and forecasts.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-purple-50 text-purple-700 text-xs rounded">Vue.js</span>
-                    <span className="px-2 py-1 bg-purple-50 text-purple-700 text-xs rounded">API Integration</span>
-                    <span className="px-2 py-1 bg-purple-50 text-purple-700 text-xs rounded">CSS</span>
+                    <span className="px-2 py-1 text-xs rounded" style={{ backgroundColor: palette.colors.secondaryLight, color: palette.colors.secondaryDark }}>Vue.js</span>
+                    <span className="px-2 py-1 text-xs rounded" style={{ backgroundColor: palette.colors.secondaryLight, color: palette.colors.secondaryDark }}>API Integration</span>
+                    <span className="px-2 py-1 text-xs rounded" style={{ backgroundColor: palette.colors.secondaryLight, color: palette.colors.secondaryDark }}>CSS</span>
                   </div>
                   <div className="flex gap-3 pt-2">
-                    <a href="#" className="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                    <a href="#" className="text-sm flex items-center gap-1" style={{ color: palette.colors.accent }}>
                       <Github className="w-4 h-4" />
                       Code
                     </a>
-                    <a href="#" className="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                    <a href="#" className="text-sm flex items-center gap-1" style={{ color: palette.colors.accent }}>
                       <ExternalLink className="w-4 h-4" />
                       Live Demo
                     </a>
@@ -115,12 +106,12 @@ export function GridPortfolioTemplate() {
               </div>
 
               {/* Project 3 */}
-              <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-all group">
-                <div className="h-48 bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
-                  <Image className="w-16 h-16 text-green-300 stroke-[1.5]" />
+              <div className="border rounded-lg overflow-hidden hover:shadow-lg transition-all group" style={{ backgroundColor: palette.colors.backgroundAlt, borderColor: palette.colors.border }}>
+                <div className="h-48 flex items-center justify-center" style={{ background: `linear-gradient(to bottom right, ${palette.colors.accentLight}, ${palette.colors.accent}20)` }}>
+                  <Image className="w-16 h-16 stroke-[1.5]" style={{ color: palette.colors.accent }} />
                 </div>
-                <div className="p-6 space-y-3">
-                  <h3 className="text-xl text-slate-900 group-hover:text-blue-600 transition-colors">
+                <div className="p-6 space-y-3" style={{ backgroundColor: palette.colors.backgroundAlt }}>
+                  <h3 className="text-xl text-slate-900 transition-colors">
                     Data Visualization Tool
                   </h3>
                   <p className="text-slate-600 text-sm">
@@ -128,12 +119,12 @@ export function GridPortfolioTemplate() {
                     and visualizations.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-green-50 text-green-700 text-xs rounded">Python</span>
-                    <span className="px-2 py-1 bg-green-50 text-green-700 text-xs rounded">Flask</span>
-                    <span className="px-2 py-1 bg-green-50 text-green-700 text-xs rounded">Chart.js</span>
+                    <span className="px-2 py-1 text-xs rounded" style={{ backgroundColor: palette.colors.accentLight, color: palette.colors.accentDark }}>Python</span>
+                    <span className="px-2 py-1 text-xs rounded" style={{ backgroundColor: palette.colors.accentLight, color: palette.colors.accentDark }}>Flask</span>
+                    <span className="px-2 py-1 text-xs rounded" style={{ backgroundColor: palette.colors.accentLight, color: palette.colors.accentDark }}>Chart.js</span>
                   </div>
                   <div className="flex gap-3 pt-2">
-                    <a href="#" className="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                    <a href="#" className="text-sm flex items-center gap-1" style={{ color: palette.colors.accent }}>
                       <Github className="w-4 h-4" />
                       Code
                     </a>
@@ -142,12 +133,12 @@ export function GridPortfolioTemplate() {
               </div>
 
               {/* Project 4 */}
-              <div className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-all group">
-                <div className="h-48 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
-                  <Image className="w-16 h-16 text-orange-300 stroke-[1.5]" />
+              <div className="border rounded-lg overflow-hidden hover:shadow-lg transition-all group" style={{ backgroundColor: palette.colors.backgroundAlt, borderColor: palette.colors.border }}>
+                <div className="h-48 flex items-center justify-center" style={{ background: `linear-gradient(to bottom right, ${palette.colors.primaryLight}, ${palette.colors.secondaryLight})` }}>
+                  <Image className="w-16 h-16 stroke-[1.5]" style={{ color: palette.colors.primary }} />
                 </div>
-                <div className="p-6 space-y-3">
-                  <h3 className="text-xl text-slate-900 group-hover:text-blue-600 transition-colors">
+                <div className="p-6 space-y-3" style={{ backgroundColor: palette.colors.backgroundAlt }}>
+                  <h3 className="text-xl text-slate-900 transition-colors">
                     Chat Application
                   </h3>
                   <p className="text-slate-600 text-sm">
@@ -155,12 +146,12 @@ export function GridPortfolioTemplate() {
                     shows typing indicators.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-orange-50 text-orange-700 text-xs rounded">Node.js</span>
-                    <span className="px-2 py-1 bg-orange-50 text-orange-700 text-xs rounded">Socket.io</span>
-                    <span className="px-2 py-1 bg-orange-50 text-orange-700 text-xs rounded">React</span>
+                    <span className="px-2 py-1 text-xs rounded" style={{ backgroundColor: palette.colors.primaryLight, color: palette.colors.primaryDark }}>Node.js</span>
+                    <span className="px-2 py-1 text-xs rounded" style={{ backgroundColor: palette.colors.primaryLight, color: palette.colors.primaryDark }}>Socket.io</span>
+                    <span className="px-2 py-1 text-xs rounded" style={{ backgroundColor: palette.colors.primaryLight, color: palette.colors.primaryDark }}>React</span>
                   </div>
                   <div className="flex gap-3 pt-2">
-                    <a href="#" className="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                    <a href="#" className="text-sm flex items-center gap-1" style={{ color: palette.colors.accent }}>
                       <Github className="w-4 h-4" />
                       Code
                     </a>
@@ -172,7 +163,7 @@ export function GridPortfolioTemplate() {
         </div>
 
         {/* Contact Section */}
-        <div className="p-12 bg-slate-50 border-t border-slate-200">
+        <div className="p-12 border-t" style={{ backgroundColor: palette.colors.secondaryLight, borderColor: palette.colors.border }}>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl text-slate-900 mb-4">Get In Touch</h2>
             <p className="text-slate-600 mb-6">
@@ -180,21 +171,15 @@ export function GridPortfolioTemplate() {
             </p>
             <a
               href="mailto:your.email@example.com"
-              className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+              className="inline-block px-6 py-3 text-white rounded-lg transition-all"
+              style={{ backgroundColor: palette.colors.accent }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = palette.colors.accentDark}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = palette.colors.accent}
             >
               Send me an email
             </a>
           </div>
         </div>
-      </div>
-
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-        <h3 className="text-slate-900 mb-2">About this template</h3>
-        <p className="text-slate-700 text-sm">
-          The Grid Layout template displays your projects in a card-based grid. Each project gets
-          equal visual weight with a preview image, description, and tech tags. Great for showing
-          multiple projects and letting viewers quickly scan your work.
-        </p>
       </div>
     </div>
   );

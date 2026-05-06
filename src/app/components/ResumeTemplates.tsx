@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
 import { FileText } from 'lucide-react';
+import { useState } from 'react';
+import { Sheet } from './Sheet';
+import { SimpleResumeTemplate } from './templates/SimpleResumeTemplate';
+import { ModernResumeTemplate } from './templates/ModernResumeTemplate';
+import { TechnicalResumeTemplate } from './templates/TechnicalResumeTemplate';
 
 export function ResumeTemplates() {
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null);
   const templates = [
     {
       id: 1,
@@ -39,7 +46,7 @@ export function ResumeTemplates() {
         {templates.map((template) => (
           <div
             key={template.id}
-            className="bg-white border-2 border-slate-200 rounded-lg overflow-hidden hover:border-blue-400 transition-all"
+            className="bg-white border-2 border-slate-200 rounded-lg overflow-hidden hover:border-sage-600 transition-all"
           >
             <div className="flex">
               <div className="w-48 bg-slate-50 border-r border-slate-200 flex items-center justify-center p-8">
@@ -54,16 +61,19 @@ export function ResumeTemplates() {
                 <div className="flex gap-3">
                   <Link
                     to="/resume-builder"
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all inline-block"
+                    className="px-4 py-2 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-all inline-block"
                   >
                     Use this template
                   </Link>
-                  <Link
-                    to={`/resume-template/${template.slug}`}
-                    className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-all inline-block"
+                  <button
+                    onClick={() => {
+                      setSelectedTemplate(template.slug);
+                      setPreviewOpen(true);
+                    }}
+                    className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-all"
                   >
                     Preview
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
@@ -71,12 +81,18 @@ export function ResumeTemplates() {
         ))}
       </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <div className="bg-sage-50 border border-sage-200 rounded-lg p-6">
         <p className="text-slate-700">
           <strong>How this works:</strong> When you choose a template, we'll automatically fill it with the resume
           bullets and project descriptions you've created. You can then download it as a PDF or edit it further.
         </p>
       </div>
+
+      <Sheet open={previewOpen} onOpenChange={setPreviewOpen}>
+        {selectedTemplate === 'simple' && <SimpleResumeTemplate />}
+        {selectedTemplate === 'modern' && <ModernResumeTemplate />}
+        {selectedTemplate === 'technical' && <TechnicalResumeTemplate />}
+      </Sheet>
     </div>
   );
 }
